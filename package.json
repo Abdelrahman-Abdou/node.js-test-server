@@ -1,0 +1,32 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src//**/*.{js,ts,json}",
+    "prettier": "prettier --config .prettierrc src//**/*.{js,ts,json} --write",
+    "build": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdelrahman-Abdou/node.js-test-server.git"
+  },
+  "author": "Udacity",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdelrahman-Abdou/node.js-test-server/issues"
+  },
+  "homepage": "https://github.com/Abdelrahman-Abdou/node.js-test-server#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "2.7.1",
+    "typescript": "^4.8.4"
+  }
+}
