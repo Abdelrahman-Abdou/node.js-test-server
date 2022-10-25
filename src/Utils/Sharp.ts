@@ -14,12 +14,11 @@ const resize = async (
       return newLocation;
     }
 
-    const resized =  await sharp(photo)
+     await sharp(photo)
       .resize(+width, +height)
       .toFile(newLocation);
       return newLocation 
   } catch (error) {
-    console.log(error);
     return "error";
   }
 };

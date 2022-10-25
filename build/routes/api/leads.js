@@ -56,17 +56,17 @@ leads_routes.get('/', function (req, res) { return __awaiter(void 0, void 0, voi
                 if (name == undefined) {
                     return [2 /*return*/, res
                             .status(400)
-                            .send('Bad request, query parameter (name) is required')];
+                            .send('Please, enter query parameter (name)')];
                 }
                 if (lead == false) {
                     return [2 /*return*/, res
                             .status(404)
-                            .send('Resource not found, this session lead doesnot exist')];
+                            .send('Resource not found')];
                 }
                 if ((0, fs_1.existsSync)(imgLocation) == false) {
                     return [2 /*return*/, res
                             .status(404)
-                            .send('Resource not found, this session lead doesnot have a photo')];
+                            .send('This session lead doese not have a photo')];
                 }
                 width = req.query.width;
                 height = req.query.height;

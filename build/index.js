@@ -9,6 +9,9 @@ var app = (0, express_1.default)();
 var port = 3000;
 app.use(routes_1.default);
 //define a route handler for the default home page
+app.get('/', function (req, res) {
+    res.send('hello world');
+});
 app.listen(port, function () {
     console.log("server started at localhost:".concat(port));
 });

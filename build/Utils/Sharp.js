@@ -47,7 +47,7 @@ var resize = function (photo, width, height, name) {
     if (height === void 0) { height = 100; }
     if (name === void 0) { name = 'photo'; }
     return __awaiter(void 0, void 0, void 0, function () {
-        var newLocation, resized, error_1;
+        var newLocation, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -60,11 +60,10 @@ var resize = function (photo, width, height, name) {
                             .resize(+width, +height)
                             .toFile(newLocation)];
                 case 1:
-                    resized = _a.sent();
+                    _a.sent();
                     return [2 /*return*/, newLocation];
                 case 2:
                     error_1 = _a.sent();
-                    console.log(error_1);
                     return [2 /*return*/, "error"];
                 case 3: return [2 /*return*/];
             }
