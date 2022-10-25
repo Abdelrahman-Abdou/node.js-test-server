@@ -54,19 +54,15 @@ leads_routes.get('/', function (req, res) { return __awaiter(void 0, void 0, voi
                 imgLocation = path_1.default.resolve('./') + "/assets/".concat(name, ".jpg");
                 lead = _DATA_1.default.includes(name);
                 if (name == undefined) {
-                    return [2 /*return*/, res
-                            .status(400)
-                            .send('Please, enter query parameter (name)')];
+                    return [2 /*return*/, res.status(400).send('Please, enter query parameter (name)')];
                 }
                 if (lead == false) {
-                    return [2 /*return*/, res
-                            .status(404)
-                            .send('Resource not found')];
+                    return [2 /*return*/, res.status(404).send('file is not exist')];
                 }
                 if ((0, fs_1.existsSync)(imgLocation) == false) {
                     return [2 /*return*/, res
                             .status(404)
-                            .send('This session lead doese not have a photo')];
+                            .send('file is not exist')];
                 }
                 width = req.query.width;
                 height = req.query.height;
