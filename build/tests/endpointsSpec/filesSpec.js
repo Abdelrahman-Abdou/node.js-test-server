@@ -39,26 +39,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var express_1 = require("express");
-var path_1 = __importDefault(require("path"));
-var validator_1 = __importDefault(require("../../validator/validator"));
 var Sharp_1 = __importDefault(require("../../Utils/Sharp"));
-var router = (0, express_1.Router)();
-router.get('/', validator_1.default, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var Name, location, width, height, resizedFile;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                Name = req.query.name;
-                location = path_1.default.resolve('./') + "/assets/".concat(Name, ".jpg");
-                width = req.query.width;
-                height = req.query.height;
-                return [4 /*yield*/, (0, Sharp_1.default)(location, width, height, Name)];
-            case 1:
-                resizedFile = _a.sent();
-                res.sendFile(resizedFile);
-                return [2 /*return*/];
-        }
-    });
-}); });
-exports.default = router;
+// import supertest from 'supertest';
+var path_1 = __importDefault(require("path"));
+// const request = supertest(resize);
+describe('Testing the image processing', function () {
+    var photo = path_1.default.resolve('./') + "/assets/lab.jpg";
+    var width = 300;
+    var height = 300;
+    var name = 'abl';
+    it('It should return a photo location in E:\node.js-test-server/assets/thumbnails/lab-300x300.jpg with height 300 and width= 300', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, (0, Sharp_1.default)(photo, width, height, name)];
+                case 1:
+                    response = _a.sent();
+                    expect(response).toEqual("".concat(path_1.default.resolve('./'), "/assets/thumbnails/abl-300x300.jpg"));
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+});

@@ -6,7 +6,7 @@ const resize = async (
   width = 100,
   height = 100,
   name = 'photo'
-)  => {
+) => {
   try {
     const newLocation =
       path.resolve('./') + `/assets/thumbnails/${name}-${width}x${height}.jpg`;
@@ -14,12 +14,12 @@ const resize = async (
       return newLocation;
     }
 
-     await sharp(photo)
+    await sharp(photo)
       .resize(+width, +height)
       .toFile(newLocation);
-      return newLocation 
+    return newLocation;
   } catch (error) {
-    return "error";
+    return 'error';
   }
 };
 

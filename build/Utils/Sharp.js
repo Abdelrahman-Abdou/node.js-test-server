@@ -64,7 +64,7 @@ var resize = function (photo, width, height, name) {
                     return [2 /*return*/, newLocation];
                 case 2:
                     error_1 = _a.sent();
-                    return [2 /*return*/, "error"];
+                    return [2 /*return*/, 'error'];
                 case 3: return [2 /*return*/];
             }
         });
