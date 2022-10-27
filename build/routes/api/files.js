@@ -45,17 +45,15 @@ var validator_1 = __importDefault(require("../../validator/validator"));
 var Sharp_1 = __importDefault(require("../../Utils/Sharp"));
 var router = (0, express_1.Router)();
 router.get('/', validator_1.default, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var Name, location, width, height, resizedFile;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
+    var _a, name, width, height, location, resizedFile;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
             case 0:
-                Name = req.query.name;
-                location = path_1.default.resolve('./') + "/assets/".concat(Name, ".jpg");
-                width = req.query.width;
-                height = req.query.height;
-                return [4 /*yield*/, (0, Sharp_1.default)(location, width, height, Name)];
+                _a = req.query, name = _a.name, width = _a.width, height = _a.height;
+                location = "".concat(path_1.default.resolve('./'), "/assets/").concat(name, ".jpg");
+                return [4 /*yield*/, (0, Sharp_1.default)(location, width, height, name)];
             case 1:
-                resizedFile = _a.sent();
+                resizedFile = _b.sent();
                 res.sendFile(resizedFile);
                 return [2 /*return*/];
         }

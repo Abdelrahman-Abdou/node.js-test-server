@@ -12,13 +12,13 @@ var validator = function (req, res, next) {
     var imgLocation = path_1.default.resolve('./') + "/assets/".concat(name, ".jpg");
     var photoExist = photos.includes(name);
     try {
-        if (name == undefined) {
+        if (!name) {
             return res.status(400).send('Please, enter query parameter (name)');
         }
         else if (!photoExist) {
             return res.status(404).send('file is not exist');
         }
-        else if (fs_1.default.existsSync(imgLocation) == false) {
+        else if (fs_1.default.existsSync(imgLocation) === false) {
             return res.status(404).send('file is not exist');
         }
         else {

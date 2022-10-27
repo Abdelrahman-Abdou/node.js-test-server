@@ -6,11 +6,7 @@ const port = 3000;
 
 app.use(routes);
 
-//define a route handler for the default home page
-app.get('/', (req, res) => {
-  res.send('hello world');
-});
-app.listen(port, () => {
+app.listen(port, ():void => {
   console.log(`server started at localhost:${port}`);
 });
 
